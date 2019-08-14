@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow, mount } from 'enzyme';
 import CarouselSlide from '../CarouselSlide';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 
 describe('Img', () => {
   let mounted;
