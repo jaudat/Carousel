@@ -61,9 +61,9 @@ describe('Carousel', () => {
       expect(wrapper.type()).toBe('div');
     });
 
-    it('has an initial `slideIndex` of 0', () => {
-      expect(wrapper.state('slideIndex')).toBe(0);
-    });
+    // it('has an initial `slideIndex` of 0', () => {
+    //   expect(wrapper.state('slideIndex')).toBe(0);
+    // });
 
     it('renders a Carousel Button labelled "Prev"', () => {
       expect(

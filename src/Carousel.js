@@ -37,6 +37,7 @@ export class Carousel extends React.PureComponent {
     const {
       defaultImg,
       defaultImgHeight,
+      slideIndex,
       slideIndexDecrement: _slideIndexDecrement,
       slideIndexIncrement: _slideIndexIncrement,
       slides,
@@ -47,7 +48,7 @@ export class Carousel extends React.PureComponent {
         <CarouselSlide
           Img={defaultImg}
           imgHeight={defaultImgHeight}
-          {...slides[this.state.slideIndex]}
+          {...slides[slideIndex]}
         />
         <CarouselButton data-action='prev' onClick={this.handlePrevClick}>Prev</CarouselButton>
         <CarouselButton data-action='next' onClick={this.handleNextClick}>Next</CarouselButton>
