@@ -17,13 +17,13 @@ describe('AutoAdvances()', () => {
     );
   });
 
-  const autoAdvanceDelay = 10e3; //(1)
+  const autoAdvanceDelay = 10e3;
   const upperBound = 5;
   let indexIncrement;
   let wrapper;
   beforeEach(() => {
     indexIncrement = jest.fn();
-    jest.useFakeTimers(); //(2)
+    jest.useFakeTimers();
     wrapper = shallow(
       <MockComponentWithAutoAdvance
         autoAdvanceDelay={autoAdvanceDelay}
@@ -35,7 +35,7 @@ describe('AutoAdvances()', () => {
   });
 
   it('calls the increment function after `autoAdvanceDelay`', () => {
-    jest.advanceTimersByTime(autoAdvanceDelay); //(3)
+    jest.advanceTimersByTime(autoAdvanceDelay);
     expect(indexIncrement).toHaveBeenCalledWith(upperBound);
   });
 
@@ -69,7 +69,7 @@ describe('AutoAdvances()', () => {
   });
 
   it('clears the timer on unmount', () => {
-    wrapper.unmount(); // (4)
+    wrapper.unmount();
     jest.advanceTimersByTime(autoAdvanceDelay);
     expect(indexIncrement).not.toHaveBeenCalled();
   });

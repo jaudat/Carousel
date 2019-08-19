@@ -19,7 +19,7 @@ export default (Component, propName, upperBoundPropName) => (
       autoAdvanceDelay: 10e3,
     };
 
-    commponentDidMount() {
+    componentDidMount() {
       this.startTimer();
     }
 
@@ -42,8 +42,8 @@ export default (Component, propName, upperBoundPropName) => (
 
       let upperBound;
       if (typeof this.props[upperBoundPropName] === 'number') {
-        upperBound = this.props.[upperBoundPropName];
-      } else if (typeof this.props[upperBoundPropName] != null) {
+        upperBound = this.props[upperBoundPropName];
+      } else if (this.props[upperBoundPropName] != null) {
         upperBound = this.props[upperBoundPropName].length;
       }
 
@@ -53,7 +53,7 @@ export default (Component, propName, upperBoundPropName) => (
     }
 
     render() {
-      const { autoAdvanceDelay: _autoAdvanceDelay, ...rest };
+      const { autoAdvanceDelay: _autoAdvanceDelay, ...rest } = this.props;
       return <Component {...rest} />
     }
   }
